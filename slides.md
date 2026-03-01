@@ -215,112 +215,6 @@ gitGraph
 </div>
 </div>
 
----
-layout: default
----
-<slideTitle colour="green-900">
-
-## The Team Reality
-</slideTitle>
-
-<div class="grid grid-cols-3 gap-4 ml-4">
-<v-clicks class="col-span-1">
-
-- You are 4 commits ahead
-- J Robert force-pushed his hotfix
-- Rosalind's refactor has been approved
-- Nobody has pulled in 3 days
-
-</v-clicks>
-
-<div v-click class="col-span-2 transition-all duration-500">
-```mermaid
-gitGraph
-  commit
-  branch rosalind-refactor
-  branch lizzie-feat
-  checkout lizzie-feat
-  commit
-  branch jrob-feat
-  checkout lizzie-feat
-  commit
-  checkout jrob-feat
-  commit
-  checkout rosalind-refactor
-  commit
-  branch hotfix
-  checkout hotfix
-  commit
-  checkout main
-  merge hotfix
-  checkout lizzie-feat
-  commit
-  checkout rosalind-refactor
-  commit
-  checkout lizzie-feat
-  checkout jrob-feat
-  commit
-  checkout main
-  commit
-  checkout lizzie-feat
-  commit
-  commit 
-```
-</div>
-</div>
-
-<div v-click class="absolute inset-0 flex items-center justify-center bg-red-900/80 backdrop-blur-sm rounded-lg border-4 border-red-500 animate-shake">
-<div class="text-center">
-  <mdi-alert class="text-6xl mb-2" />
-
-  ## CONFLICT
-  <p class="font-mono">CONFLICT: Merge conflict in EVERYTHING.ts</p>
-</div>
-</div>
-
----
-layout: two-cols-header
----
-
-<slideTitle colour="green-900">
-
-## Common Pain Points When Working in a Team
-</slideTitle>
-
-::left:: 
-
-<br>
-<v-clicks class="ml-4">
-
-- A messy, unreadable commit history
-- Long-lived branches that never merge cleanly
-- Merge conflicts nobody understands
-- Fear of breaking `main`
-</v-clicks>
-
-::right::
-
-<div class="flex flex-shrink">
-  <div v-click v-show="$clicks <= 5" >
-    <BadGitHistory />
-  </div>
-  <div v-click v-show="$clicks > 5" >
-    <Merge />
-  </div>
-</div>
-
----
-layout: default
----
-<slideTitle colour="green-900">
-
-## Sounds Familiar?
-</slideTitle>
-
-
-<SoundsFamiliar class="mx-4"/>
-
----
 layout: section
 ---
 
@@ -430,6 +324,114 @@ stateDiagram-v2
 </div>
 
 <!-- branches arent folders -->
+
+---
+layout: default
+---
+<slideTitle colour="green-900">
+
+## The Team Reality
+</slideTitle>
+
+<div class="grid grid-cols-3 gap-4 ml-4">
+<v-clicks class="col-span-1">
+
+- You are 4 commits ahead
+- J Robert force-pushed his hotfix
+- Rosalind's refactor has been approved
+- Nobody has pulled in 3 days
+
+</v-clicks>
+
+<div v-click class="col-span-2 transition-all duration-500">
+```mermaid
+gitGraph
+  commit
+  branch rosalind-refactor
+  branch lizzie-feat
+  checkout lizzie-feat
+  commit
+  branch jrob-feat
+  checkout lizzie-feat
+  commit
+  checkout jrob-feat
+  commit
+  checkout rosalind-refactor
+  commit
+  branch hotfix
+  checkout hotfix
+  commit
+  checkout main
+  merge hotfix
+  checkout lizzie-feat
+  commit
+  checkout rosalind-refactor
+  commit
+  checkout lizzie-feat
+  checkout jrob-feat
+  commit
+  checkout main
+  commit
+  checkout lizzie-feat
+  commit
+  commit 
+```
+</div>
+</div>
+
+<div v-click class="absolute inset-0 flex items-center justify-center bg-red-900/80 backdrop-blur-sm rounded-lg border-4 border-red-500 animate-shake">
+<div class="text-center">
+  <mdi-alert class="text-6xl mb-2" />
+
+  ## CONFLICT
+  <p class="font-mono">CONFLICT: Merge conflict in EVERYTHING.ts</p>
+</div>
+</div>
+
+---
+layout: two-cols-header
+---
+
+<slideTitle colour="green-900">
+
+## Common Pain Points When Working in a Team
+</slideTitle>
+
+::left:: 
+
+<br>
+<v-clicks class="ml-4">
+
+- A messy, unreadable commit history
+- Long-lived branches that never merge cleanly
+- Merge conflicts nobody understands
+- Fear of breaking `main`
+</v-clicks>
+
+::right::
+
+<div class="flex flex-shrink">
+  <div v-click v-show="$clicks <= 5" >
+    <BadGitHistory />
+  </div>
+  <div v-click v-show="$clicks > 5" >
+    <Merge />
+  </div>
+</div>
+
+---
+layout: default
+---
+<slideTitle colour="green-900">
+
+## Sounds Familiar?
+</slideTitle>
+
+
+<SoundsFamiliar class="mx-4"/>
+
+---
+
 
 --- 
 layout: section
